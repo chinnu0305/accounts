@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: muthojusanthosh/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8010:8010"
+    networks:
+      - eazybank-network
+    
+  loans:
+    image: muthojusanthosh/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8070:8070"
+    networks:
+      - eazybank-network
+    
+  cards:
+    image: muthojusanthosh/cards:latest
+    mem_limit: 700m
+    ports:
+      - "8082:8082"
+    networks:
+      - eazybank-network
+    
+networks:
+  eazybank-network:
